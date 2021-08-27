@@ -44,13 +44,15 @@ body{
     border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
     text-align: center;
     margin-bottom: 10px;
     background-color: teal;
     color: white;
 }
 
-.form-input{
+.form-detials{
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 20px;
@@ -79,6 +81,16 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+.btn:active{
+    background-color: lightgreen;
+    color: black;
 }
 
 .footer{
