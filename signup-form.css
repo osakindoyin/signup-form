@@ -33,14 +33,14 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.form{
+.user{
     margin: 25px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.form-info{
+.trail-info{
     border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -52,14 +52,14 @@ body{
     color: white;
 }
 
-.form-detials{
+.signup-form{
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 }
-.form-text{
+.user-input{
     height: 40px;
     width: 100%;
     font-size: 14px;
@@ -70,7 +70,11 @@ body{
     border-radius: 5px;
 }
 
-.btn{
+.user-input:active{
+    border: 0.5px red solid;
+}
+
+#submit{
     width: 100%;
     height: 40px;
     font-size: 12px;
@@ -83,12 +87,12 @@ body{
     margin-bottom: 10px;
 }
 
-.btn:hover{
+#submit:hover{
     cursor: pointer;
     background-color: darkgreen;
 }
 
-.btn:active{
+#submit:active{
     background-color: lightgreen;
     color: black;
 }
@@ -98,3 +102,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+#nameError {
+    display: none;
+    font-size: 0.8em;
+  }
+  
+  #nameError.visible {
+    display: block;
+  }
+  
+  .user-input.invalid {
+    border-color: red;
+  }

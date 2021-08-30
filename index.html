@@ -19,21 +19,25 @@
         </section>
 
         <!-- This section is where the client types their information to signup -->
-        <section class="form">
-            <div class="form-info">
+        <section class="user">
+            <div class="trail-info">
                 <p> <strong>Try it free 7 days</strong> <span style="color: lightgray;"> then $20/mo. thereafter</span>
                 </p>
             </div>
 
-            <div class="form-detials">
-                <input type="text" class="form-text" id="firstName" placeholder="First Name">
-                <input type="text" class="form-text" id="lastName" placeholder="Last Name">
-                <input type="text" class="form-text" name="email" placeholder="Email Address">
-                <input type="text" class="form-text" name="password" placeholder="Password">
-
-                <button class="btn">Claim your free trial</button>
-                <footer class="footer"><span style="color: lightgray;">By clicking the button, you are agreeing to
-                        our</span> <span style="color: red;">Terms and Services</span></footer>
+            <div class="signup-form">
+                <form action="" class="user-form" name="userForm" onsubmit="return validateForm()";>
+                    <input class="user-input" name="firstName" id="firstName" type="text" placeholder="First Name" minlength="2">
+                    <span role="alert" id="nameError" aria-hidden="true">first name cannot be empty</span>
+                    <input class="user-input" name="lastName" id="lastName" type="text" placeholder="Last Name">
+                    <span role="alert" id="nameError" aria-hidden="true">last name cannot be empty</span>
+                    <input class="user-input" name="email" id="email" type="text" placeholder="Email Address">
+                    <span role="alert" id="nameError" aria-hidden="true">email cannot be empty</span>
+                    <input class="user-input" name="password" id="password" type="text" placeholder="Password">
+                    <span role="alert" id="nameError" aria-hidden="true">password cannot be empty</span>
+                    <input id="submit" type="submit" value="Claim your free trial">
+                </form>
+                <footer class="footer"><span style="color: lightgray;">By clicking the button, you are agreeing to our</span> <span style="color: red;">Terms and Services</span></footer>
             </div>
         </section>
     </div>
