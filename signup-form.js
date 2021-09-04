@@ -1,52 +1,65 @@
-/*
-function validateForm() {
-    let firstName = document.forms["userForm"]["firstName"].value;
-    console.log(firstName);
-    if(firstName == ""){
-        alert("Please enter first name");
-        return false;
-    }
+// This function checks if email is valid
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
-*/
 
+// Here, I declared the variables
+const firstNameInput = document.getElementById("firstName");
+const lastNameInput = document.getElementById("lastName");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
 const submit = document.getElementById("submit");
 
-submit.addEventListener("click", validate);
+const formInput = [firstNameInput, emailInput, lastNameInput, passwordInput];
 
-function validate(e) {
-  e.preventDefault();
+// checks if form has been validated
+let isValidationOn = false;
 
-  const firstNameField = document.getElementById("firstName");
-  const lastNameField = document.getElementById("lastName");
-  const emailField = document.getElementById("email");
-  const passwordField = document.getElementById("password");
-
-  if (firstNameField.value === "") {
-    const firstNameError = document.getElementById("nameError");
-    firstNameError.classList.add("visible");
-    firstNameField.classList.add("invalid");
-    firstNameError.setAttribute("aria-hidden", false);
-  }
-
-  if (lastNameField.value === "") {
-    const lastNameError = document.getElementById("nameError");
-    lastNameError.classList.add("visible");
-    lastNameField.classList.add("invalid");
-    lastNameError.setAttribute("aria-hidden", false);
-  }
-
-  if (emailField.value === "") {
-    const emailError = document.getElementById("nameError");
-    emailError.classList.add("visible");
-    emailField.classList.add("invalid");
-    emailError.setAttribute("aria-hidden", false);
-  }
-
-  if (passwordField.value === "") {
-    const passwordError = document.getElementById("nameError");
-    passwordError.classList.add("visible");
-    passwordField.classList.add("invalid");
-    passwordError.setAttribute("aria-hidden", false);
-  }
-  return true;
+// This function resets each input fields
+function resetValidation(input) {
+    input.classList.remove("invalid")
+    input.nextElementSibling.classList.add("hidden");
 }
+
+// This function validates each input fields
+function checkValidation(input){
+    input.classList.add("invalid")
+    input.nextElementSibling.classList.remove("hidden");
+}
+
+// This function vaildates the whole form when the submit button is clicked 
+function validateForm(){
+  if(!isValidationOn) return;
+  resetValidation(firstNameInput);
+  resetValidation(lastNameInput);
+  resetValidation(emailInput);
+  resetValidation(passwordInput);
+
+  if (!firstNameInput.value){
+    checkValidation(firstNameInput);
+  }
+  if (!lastNameInput.value){
+    checkValidation(lastNameInput);
+  }
+  if (!validateEmail(emailInput.value)){
+    checkValidation(emailInput);
+  }
+  if (!passwordInput.value){
+    checkValidation(passwordInput);
+  }
+}
+
+//Gets the submit event
+submit.addEventListener("click", submitForm);
+function submitForm(e) {
+  e.preventDefault();
+  isValidationOn = true;
+  validateForm();
+}
+
+formInput.forEach(input => {
+  input.addEventListener("input", function(){
+    validateForm();
+  })
+});

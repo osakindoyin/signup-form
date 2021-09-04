@@ -27,14 +27,14 @@
 
             <div class="signup-form">
                 <form action="" class="user-form" name="userForm" onsubmit="return validateForm()";>
-                    <input class="user-input" name="firstName" id="firstName" type="text" placeholder="First Name" minlength="2">
-                    <span role="alert" id="nameError" aria-hidden="true">first name cannot be empty</span>
-                    <input class="user-input" name="lastName" id="lastName" type="text" placeholder="Last Name">
-                    <span role="alert" id="nameError" aria-hidden="true">last name cannot be empty</span>
-                    <input class="user-input" name="email" id="email" type="text" placeholder="Email Address">
-                    <span role="alert" id="nameError" aria-hidden="true">email cannot be empty</span>
-                    <input class="user-input" name="password" id="password" type="text" placeholder="Password">
-                    <span role="alert" id="nameError" aria-hidden="true">password cannot be empty</span>
+                    <input name="firstName" id="firstName" type="text" placeholder="First Name" minlength="2">
+                    <div class="error-hint hidden">first name can not be empty</div>
+                    <input name="lastName" id="lastName" type="text" placeholder="Last Name">
+                    <div class="error-hint hidden">last name can not be empty</div>
+                    <input name="email" id="email" type="text" placeholder="Email Address">
+                    <div class="error-hint hidden">email is empty or invalid</div>
+                    <input name="password" id="password" type="text" placeholder="Password">
+                    <div class="error-hint hidden">password is empty or invalid</div>
                     <input id="submit" type="submit" value="Claim your free trial">
                 </form>
                 <footer class="footer"><span style="color: lightgray;">By clicking the button, you are agreeing to our</span> <span style="color: red;">Terms and Services</span></footer>

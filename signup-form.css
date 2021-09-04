@@ -8,11 +8,10 @@ body{
     background-color: tomato;
 }
 .signup-page{
-    width: 800px;
     height: 500px;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top: 10%;
-    margin-right: 25%;
+    margin-right: 20%;
     display: flex;
 }
 
@@ -59,7 +58,7 @@ body{
     background-color: white;
     box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 }
-.user-input{
+input{
     height: 40px;
     width: 100%;
     font-size: 14px;
@@ -70,8 +69,20 @@ body{
     border-radius: 5px;
 }
 
-.user-input:active{
-    border: 0.5px red solid;
+input.invalid{
+    border: 0.5px solid red;
+    border-radius: 5px;
+}
+
+.error-hint{
+    text-align: right;
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+
+.hidden{
+    display: none;
 }
 
 #submit{
@@ -102,16 +113,3 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-
-#nameError {
-    display: none;
-    font-size: 0.8em;
-  }
-  
-  #nameError.visible {
-    display: block;
-  }
-  
-  .user-input.invalid {
-    border-color: red;
-  }
